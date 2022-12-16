@@ -92,6 +92,8 @@ jobs:
       run: |
         cd tor-mobile-kmp
         git submodule update --init
+        brew install autoconf@2.69 automake coreutils gettext libtool po4a
+        brew link --overwrite autoconf@2.69
         ./gradlew clean build publishToMavenLocal
 
     - name: Assemble new android app apk
